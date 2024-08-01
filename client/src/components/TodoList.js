@@ -8,7 +8,7 @@ const TodoList = ({ token }) => {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/todos', {
+        const response = await axios.get('https://todo-app-backend-j4xg.onrender.com/todos', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setTodos(response.data);
@@ -21,7 +21,7 @@ const TodoList = ({ token }) => {
 
   const addTodo = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/todos', { title: newTodo }, {
+      const response = await axios.post('https://todo-app-backend-j4xg.onrender.com/todos', { title: newTodo }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTodos([...todos, response.data]);
@@ -33,7 +33,7 @@ const TodoList = ({ token }) => {
 
   const updateTodo = async (id, completed) => {
     try {
-      const response = await axios.put(`http://localhost:5000/todos/${id}`, { completed: !completed }, {
+      const response = await axios.put(`https://todo-app-backend-j4xg.onrender.com/todos/${id}`, { completed: !completed }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTodos(todos.map(todo => (todo._id === id ? response.data : todo)));
@@ -44,7 +44,7 @@ const TodoList = ({ token }) => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/todos/${id}`, {
+      await axios.delete(`https://todo-app-backend-j4xg.onrender.com/todos/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTodos(todos.filter(todo => todo._id !== id));

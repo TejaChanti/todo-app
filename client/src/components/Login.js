@@ -8,7 +8,7 @@ const Login = ({ setToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', { email, password });
+      const response = await axios.post('https://todo-app-backend-j4xg.onrender.com/login', { email, password });
       setToken(response.data.token);
       alert('Successfully login')
       setEmail('');
