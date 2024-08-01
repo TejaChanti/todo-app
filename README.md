@@ -62,11 +62,67 @@ This project is a basic To-Do list application that allows users to register, lo
 
 ## API Documentation
 
-### POST /register
-- Registers a new user.
-- **Request Body:**
-  ```json
-  {
-    "email": "user@example.com",
-    "password": "password123"
-  }
+### User Registration
+- **POST /register**
+  - Request Body: `{ "email": "user@example.com", "password": "password" }`
+  - Response: `{ "message": "User registered successfully" }`
+
+### User Login
+- **POST /login**
+  - Request Body: `{ "email": "user@example.com", "password": "password" }`
+  - Response: `{ "token": "jwt_token", "message": "Login successful" }`
+
+### Create To-Do Item
+- **POST /todos**
+  - Headers: `Authorization: Bearer jwt_token`
+  - Request Body: `{ "title": "New To-Do" }`
+  - Response: `{ "userId": "user_id", "title": "New To-Do", "completed": false, "_id": "todo_id" }`
+
+### Get All To-Do Items
+- **GET /todos**
+  - Headers: `Authorization: Bearer jwt_token`
+  - Response: `[{ "userId": "user_id", "title": "New To-Do", "completed": false, "_id": "todo_id" }]`
+
+### Update To-Do Item
+- **PUT /todos/:id**
+  - Headers: `Authorization: Bearer jwt_token`
+  - Request Body: `{ "title": "Updated To-Do", "completed": true }`
+  - Response: `{ "userId": "user_id", "title": "Updated To-Do", "completed": true, "_id": "todo_id" }`
+
+### Delete To-Do Item
+- **DELETE /todos/:id**
+  - Headers: `Authorization: Bearer jwt_token`
+  - Response: `{ "message": "To-Do item deleted" }`
+
+### Get All User Sessions
+- **GET /sessions**
+  - Headers: `Authorization: Bearer jwt_token`
+  - Response: `[{ "userId": "user_id", "loginTime": "time", "logoutTime": "time", "ipAddress": "ip" }]`
+
+## Installation
+
+### Backend
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/mern-app.git
+    ```
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+3. Start the backend server:
+    ```bash
+    npm start
+    ```
+### Frontend
+
+1. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+2. Start the React development server:
+    ```bash
+    npm start
+    ```
