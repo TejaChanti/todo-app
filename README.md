@@ -58,7 +58,7 @@ This project is a basic To-Do list application that allows users to register, lo
   - URL: [https://todo-app-backend-j4xg.onrender.com](https://todo-app-backend-j4xg.onrender.com) (Replace with your actual URL)
 
 - **Frontend (Vercel):**
-  - URL: [https://your-frontend-app.vercel.app](https://your-frontend-app.vercel.app) (Replace with your actual URL)
+  - URL: [https://todo-app-frontend-zeta.vercel.app](https://todo-app-frontend-zeta.vercel.app) (Replace with your actual URL)
 
 ## API Documentation
 
