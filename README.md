@@ -105,7 +105,7 @@ This project is a basic To-Do list application that allows users to register, lo
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/mern-app.git
+    git clone https://github.com/TejaChanti/todo-app.git
     ```
 2. Install dependencies:
     ```bash
